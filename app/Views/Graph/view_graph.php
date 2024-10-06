@@ -82,10 +82,10 @@
                     // });
                     document.addEventListener("DOMContentLoaded", () => {
                       const renderChart = (id) => {
-                        fetch(`<?=base_url("theGraph")?>/${id}`) // Replace with your API endpoint
+                        fetch(`<?=base_url("theGraph")?>/${id}`) 
                         .then(response => response.json())
                         .then(responseData => {
-                          // Assuming the API returns an array of objects with 'x' and 'y' properties
+
                           const data = responseData.data; // Access the array inside the response
 
                           if (!Array.isArray(data)) {
@@ -93,7 +93,7 @@
                           }
 
                           const formattedData = data.map(item => ({
-                            x: new Date(item.t_time), // Use `t_time` for the timestamp
+                            x: new Date(item.t_time), 
                             y: [parseFloat(item.topen), parseFloat(item.thigh), parseFloat(item.tlow), parseFloat(item.tclose)] // Convert values to numbers
                           }));
 
